@@ -20,7 +20,7 @@ later.
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
-![REST API](https://img.shields.io/badge/REST%20API-005571?logo=api&logoColor=white)
+![REST APIs](https://img.shields.io/badge/REST%20APIs-005571?logo=api&logoColor=white)
 
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL%20Workbench-4479A1?logo=mysql&logoColor=white)
