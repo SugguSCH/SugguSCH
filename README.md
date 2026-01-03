@@ -3,7 +3,7 @@
 </p>
 
 <h3 align="Center">Hello there I'm Suggus 👋👋 </h3>
-<h4 align="Center">A sophomore student, Currently studying B.Sc. Digital Science and Technology program at Mahidol University. </h4>
+<h4 align="Center">A sophomore student, currently studying B.Sc. Digital Science and Technology program at Mahidol University. </h4>
 
 ## Contact 💬
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chanasorn-chirapongsathon-69ba27384/) 
