@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Data is everything..png" width="50%">
+  <img src="Data is everything..png" width="75%">
 </p>
 
 <h3 align="Center">Hello there I'm Suggus 👋👋 </h3>
