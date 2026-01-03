@@ -27,3 +27,12 @@
 ![Notion](https://img.shields.io/badge/Notion-000000?logo=notion&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-00C4CC?logo=canva&logoColor=white)
+
+## Projects 🎯
+later.
+
+## Activities 📋
+later.
+
+## Education 📖
+later.
