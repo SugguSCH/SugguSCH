@@ -1,6 +1,9 @@
+<p align="center">
+  <img src="Data is everything..png" width="50%">
+</p>
+
 <h3 align="Center">Hello there I'm Suggus 👋👋 </h3>
 <h5 align="Center">A sophomore student, Currently studying B.Sc. Digital Science and Technology program at Mahidol University. </h5>
-<h5 align="Center">"Data is everything."</h5>
 
 ## Contact 💬
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chanasorn-chirapongsathon-69ba27384/) 
