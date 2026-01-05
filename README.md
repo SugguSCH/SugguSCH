@@ -9,8 +9,11 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chanasorn-chirapongsathon-69ba27384/) 
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:chanasorn1710@gmail.com)
 
-## Education 📖
-later.
+## Currently Learning 📖
+- Fundamental of Machine Learning
+- Computer and Communications Security
+- Intro to Internet of Things
+- Mobile Application Development
 
 ## languages and Tools ⚒️
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
