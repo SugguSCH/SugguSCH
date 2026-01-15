@@ -6,7 +6,7 @@
 <h4 align="Center">A sophomore student, currently studying B.Sc. Digital Science and Technology program at Mahidol University. </h4>
 
 ## Contact 💬
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chanasorn-chirapongsathon-69ba27384/) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chanasorn-chirapongsathon-a493283a6/) 
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:chanasorn1710@gmail.com)
 
 ## Currently Learning 📖
