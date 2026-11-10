@@ -90,52 +90,17 @@ jobs:
         with:
           ref: main
 
-      - name: Show metrics after the first successful render
+      - name: Update activity images
         if: steps.access.outputs.ready == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python .github/scripts/activity.py
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          for image in ('overview', 'calendar', 'details'):
-              assert Path(f'metrics/{image}.svg').is_file(), f'Missing {image} image'
-          path = Path('README.md')
-          text = path.read_text(encoding='utf-8')
-          block = '''<!-- github-metrics:start -->
-          ## GitHub Activity
-
-          <p align="center">
-            <img src="metrics/overview.svg" width="48%" alt="GitHub overview, commits, pull requests and issues" />
-            <img src="metrics/calendar.svg" width="48%" alt="Contribution calendar for the past year" />
-          </p>
-
-          <details>
-          <summary>Activity patterns, recent languages and contributions</summary>
-
-          <p align="center">
-            <img src="metrics/habits.svg" alt="Public push activity by hour and day in Bangkok time" />
-            <img src="metrics/recent-languages.svg" alt="Languages inferred from changed files in sampled recent public push heads" />
-            <img src="metrics/details.svg" alt="Repository languages and notable contributions" />
-            <img src="metrics/recent-activity.svg" alt="Five latest public GitHub activities" />
-          </p>
-
-          Activity patterns reflect public push events, not hours spent coding. Times are shown in Bangkok time.
-
-          </details>
-
-          ---
-          <!-- github-metrics:end -->'''
-          text, count = re.subn(r'<!-- github-metrics:start -->.*?<!-- github-metrics:end -->', lambda _: block, text, flags=re.S)
-          assert count == 1, 'Expected one metrics section'
-          path.write_text(text, encoding='utf-8')
-          PY
-          if [ -n "$(git status --porcelain -- README.md metrics/habits.svg metrics/recent-languages.svg metrics/recent-activity.svg)" ]; then
+          if [ -n "$(git status --porcelain -- metrics/habits.svg metrics/recent-languages.svg metrics/recent-activity.svg)" ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add README.md metrics/habits.svg metrics/recent-languages.svg metrics/recent-activity.svg
-            git commit -m 'Show generated GitHub metrics'
+            git add metrics/habits.svg metrics/recent-languages.svg metrics/recent-activity.svg
+            git commit -m 'Update GitHub activity images'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
