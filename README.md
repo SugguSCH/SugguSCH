@@ -36,6 +36,20 @@ Technologies and tools I have used through coursework, projects, internships, an
   <img src="metrics/calendar.svg" width="48%" alt="Contribution calendar for the past year" />
 </p>
 
+<details>
+<summary>Activity patterns, recent languages and contributions</summary>
+
+<p align="center">
+  <img src="metrics/habits.svg" alt="Public push activity by hour and day in Bangkok time" />
+  <img src="metrics/recent-languages.svg" alt="Languages inferred from changed files in sampled recent public push heads" />
+  <img src="metrics/details.svg" alt="Repository languages and notable contributions" />
+  <img src="metrics/recent-activity.svg" alt="Five latest public GitHub activities" />
+</p>
+
+Activity patterns reflect public push events, not hours spent coding. Times are shown in Bangkok time.
+
+</details>
+
 ---
 <!-- github-metrics:end -->
 
