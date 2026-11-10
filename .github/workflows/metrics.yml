@@ -69,14 +69,7 @@ jobs:
           filename: metrics/details.svg
           base: ''
           config_timezone: Asia/Bangkok
-          config_order: habits, languages, notable, activity
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: graph
-          plugin_habits_languages_limit: 0
+          config_order: languages, notable, activity
           plugin_languages: yes
           plugin_languages_indepth: yes
           plugin_languages_analysis_timeout: 2
@@ -103,7 +96,10 @@ jobs:
 
       - name: Show metrics after the first successful render
         if: steps.access.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          python .github/scripts/activity.py
           python - <<'PY'
           from pathlib import Path
           import re
@@ -123,10 +119,11 @@ jobs:
           <summary>Activity patterns, recent languages and contributions</summary>
 
           <p align="center">
+            <img src="metrics/habits.svg" alt="Public push activity by hour and day in Bangkok time" />
             <img src="metrics/details.svg" alt="Activity by day and hour, recent languages, notable contributions and latest activity" />
           </p>
 
-          Activity patterns reflect GitHub events, not hours spent coding. Times are shown in Bangkok time.
+          Activity patterns reflect public push events, not hours spent coding. Times are shown in Bangkok time.
 
           </details>
 
@@ -136,10 +133,10 @@ jobs:
           assert count == 1, 'Expected one metrics section'
           path.write_text(text, encoding='utf-8')
           PY
-          if ! git diff --quiet -- README.md; then
+          if [ -n "$(git status --porcelain -- README.md metrics/habits.svg)" ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add README.md
+            git add README.md metrics/habits.svg
             git commit -m 'Show generated GitHub metrics'
             git pull --rebase origin main
             git push origin HEAD:main
