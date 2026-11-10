@@ -79,9 +79,12 @@ jobs:
           plugin_habits_languages_limit: 0
           plugin_languages: yes
           plugin_languages_indepth: yes
+          plugin_languages_analysis_timeout: 2
+          plugin_languages_analysis_timeout_repositories: 1
           plugin_languages_sections: recently-used
           plugin_languages_limit: 6
           plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 100
           plugin_languages_details: percentage
           plugin_notable: yes
           plugin_notable_from: all
