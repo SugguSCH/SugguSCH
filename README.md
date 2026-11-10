@@ -29,6 +29,14 @@ Technologies and tools I have used through coursework, projects, internships, an
 ---
 
 <!-- github-metrics:start -->
+## GitHub Activity
+
+<p align="center">
+  <img src="metrics/overview.svg" width="48%" alt="GitHub overview, commits, pull requests and issues" />
+  <img src="metrics/calendar.svg" width="48%" alt="Contribution calendar for the past year" />
+</p>
+
+---
 <!-- github-metrics:end -->
 
 ## Currently Learning
