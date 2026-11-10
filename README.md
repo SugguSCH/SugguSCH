@@ -8,84 +8,20 @@
   Mahidol University
 </p>
 
-<p align="center">
-  <a href="#tech-stack">Tech Stack</a> &nbsp; / &nbsp;
-  <a href="#currently-learning">Currently Learning</a> &nbsp; / &nbsp;
-  <a href="#contact">Contact</a>
-</p>
-
 ---
 
 ## Tech Stack
 
-### Languages
-
-![Python](https://img.shields.io/badge/Python-161B22?style=for-the-badge&logo=python&logoColor=79C0FF)
-![TypeScript](https://img.shields.io/badge/TypeScript-161B22?style=for-the-badge&logo=typescript&logoColor=79C0FF)
-![JavaScript](https://img.shields.io/badge/JavaScript-161B22?style=for-the-badge&logo=javascript&logoColor=79C0FF)
-![Java](https://img.shields.io/badge/Java-161B22?style=for-the-badge&logo=openjdk&logoColor=79C0FF)
-![R](https://img.shields.io/badge/R-161B22?style=for-the-badge&logo=r&logoColor=79C0FF)
-![HTML5](https://img.shields.io/badge/HTML5-161B22?style=for-the-badge&logo=html5&logoColor=79C0FF)
-![CSS3](https://img.shields.io/badge/CSS3-161B22?style=for-the-badge&logo=css&logoColor=79C0FF)
-
-### Frontend & Mobile
-
-![Next.js](https://img.shields.io/badge/Next.js-161B22?style=for-the-badge&logo=nextdotjs&logoColor=79C0FF)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-161B22?style=for-the-badge&logo=tailwindcss&logoColor=79C0FF)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-161B22?style=for-the-badge&logo=bootstrap&logoColor=79C0FF)
-![Flutter](https://img.shields.io/badge/Flutter-161B22?style=for-the-badge&logo=flutter&logoColor=79C0FF)
-
-### Backend & Database
-
-![Node.js](https://img.shields.io/badge/Node.js-161B22?style=for-the-badge&logo=nodedotjs&logoColor=79C0FF)
-![NestJS](https://img.shields.io/badge/NestJS-161B22?style=for-the-badge&logo=nestjs&logoColor=79C0FF)
-![Express](https://img.shields.io/badge/Express-161B22?style=for-the-badge&logo=express&logoColor=79C0FF)
-![Prisma](https://img.shields.io/badge/Prisma-161B22?style=for-the-badge&logo=prisma&logoColor=79C0FF)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-161B22?style=for-the-badge&logo=postgresql&logoColor=79C0FF)
-![MySQL](https://img.shields.io/badge/MySQL-161B22?style=for-the-badge&logo=mysql&logoColor=79C0FF)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-161B22?style=for-the-badge)
-
-### DevOps & Cloud
-
-![Docker](https://img.shields.io/badge/Docker-161B22?style=for-the-badge&logo=docker&logoColor=79C0FF)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-161B22?style=for-the-badge&logo=ubuntu&logoColor=79C0FF)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-161B22?style=for-the-badge&logo=githubactions&logoColor=79C0FF)
-![Nginx](https://img.shields.io/badge/Nginx-161B22?style=for-the-badge&logo=nginx&logoColor=79C0FF)
-![Oracle Cloud](https://img.shields.io/badge/Oracle%20Cloud-161B22?style=for-the-badge)
-![Cloudflare Tunnel](https://img.shields.io/badge/Cloudflare%20Tunnel-161B22?style=for-the-badge&logo=cloudflare&logoColor=79C0FF)
-
-### Testing & Security
-
-![Jest](https://img.shields.io/badge/Jest-161B22?style=for-the-badge&logo=jest&logoColor=79C0FF)
-![Playwright](https://img.shields.io/badge/Playwright-161B22?style=for-the-badge)
-![Cypress](https://img.shields.io/badge/Cypress-161B22?style=for-the-badge&logo=cypress&logoColor=79C0FF)
-![Postman](https://img.shields.io/badge/Postman-161B22?style=for-the-badge&logo=postman&logoColor=79C0FF)
-![JWT](https://img.shields.io/badge/JWT-161B22?style=for-the-badge&logo=jsonwebtokens&logoColor=79C0FF)
-![OWASP](https://img.shields.io/badge/OWASP-161B22?style=for-the-badge&logo=owasp&logoColor=79C0FF)
-
-### Monitoring & Logging
-
-![Sentry](https://img.shields.io/badge/Sentry-161B22?style=for-the-badge&logo=sentry&logoColor=79C0FF)
-![Pino](https://img.shields.io/badge/Pino-161B22?style=for-the-badge&logo=pino&logoColor=79C0FF)
-
-### IoT & Networking
-
-![Arduino](https://img.shields.io/badge/Arduino-161B22?style=for-the-badge&logo=arduino&logoColor=79C0FF)
-![ESP32](https://img.shields.io/badge/ESP32-161B22?style=for-the-badge&logo=espressif&logoColor=79C0FF)
-![Cisco Packet Tracer](https://img.shields.io/badge/Cisco%20Packet%20Tracer-161B22?style=for-the-badge&logo=cisco&logoColor=79C0FF)
-
-### Tools & Collaboration
-
-![Git](https://img.shields.io/badge/Git-161B22?style=for-the-badge&logo=git&logoColor=79C0FF)
-![GitHub](https://img.shields.io/badge/GitHub-161B22?style=for-the-badge&logo=github&logoColor=79C0FF)
-![Jira](https://img.shields.io/badge/Jira-161B22?style=for-the-badge&logo=jira&logoColor=79C0FF)
-![VS Code](https://img.shields.io/badge/VS%20Code-161B22?style=for-the-badge)
-![Figma](https://img.shields.io/badge/Figma-161B22?style=for-the-badge&logo=figma&logoColor=79C0FF)
-![Draw.io](https://img.shields.io/badge/Draw.io-161B22?style=for-the-badge&logo=diagramsdotnet&logoColor=79C0FF)
-![Notion](https://img.shields.io/badge/Notion-161B22?style=for-the-badge&logo=notion&logoColor=79C0FF)
-![Canva](https://img.shields.io/badge/Canva-161B22?style=for-the-badge&logo=canva&logoColor=79C0FF)
-![Power BI](https://img.shields.io/badge/Power%20BI-161B22?style=for-the-badge)
-![Excel](https://img.shields.io/badge/Excel-161B22?style=for-the-badge)
+| Category | Technologies |
+| :--- | :--- |
+| Languages | <img src="https://skillicons.dev/icons?i=python" width="36" height="36" alt="Python" title="Python" /> <img src="https://skillicons.dev/icons?i=ts" width="36" height="36" alt="TypeScript" title="TypeScript" /> <img src="https://skillicons.dev/icons?i=js" width="36" height="36" alt="JavaScript" title="JavaScript" /> <img src="https://skillicons.dev/icons?i=java" width="36" height="36" alt="Java" title="Java" /> <img src="https://skillicons.dev/icons?i=r" width="36" height="36" alt="R" title="R" /> <img src="https://skillicons.dev/icons?i=html" width="36" height="36" alt="HTML5" title="HTML5" /> <img src="https://skillicons.dev/icons?i=css" width="36" height="36" alt="CSS3" title="CSS3" /> |
+| Frontend & Mobile | <img src="https://skillicons.dev/icons?i=nextjs" width="36" height="36" alt="Next.js" title="Next.js" /> <img src="https://skillicons.dev/icons?i=tailwind" width="36" height="36" alt="Tailwind CSS" title="Tailwind CSS" /> <img src="https://skillicons.dev/icons?i=bootstrap" width="36" height="36" alt="Bootstrap" title="Bootstrap" /> <img src="https://skillicons.dev/icons?i=flutter" width="36" height="36" alt="Flutter" title="Flutter" /> |
+| Backend & Database | <img src="https://skillicons.dev/icons?i=nodejs" width="36" height="36" alt="Node.js" title="Node.js" /> <img src="https://skillicons.dev/icons?i=nestjs" width="36" height="36" alt="NestJS" title="NestJS" /> <img src="https://skillicons.dev/icons?i=express" width="36" height="36" alt="Express" title="Express" /> <img src="https://skillicons.dev/icons?i=prisma" width="36" height="36" alt="Prisma" title="Prisma" /> <img src="https://skillicons.dev/icons?i=postgres" width="36" height="36" alt="PostgreSQL" title="PostgreSQL" /> <img src="https://skillicons.dev/icons?i=mysql" width="36" height="36" alt="MySQL" title="MySQL" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" width="36" height="36" alt="SQL Server" title="SQL Server" /> |
+| DevOps & Cloud | <img src="https://skillicons.dev/icons?i=docker" width="36" height="36" alt="Docker" title="Docker" /> <img src="https://skillicons.dev/icons?i=ubuntu" width="36" height="36" alt="Ubuntu" title="Ubuntu" /> <img src="https://skillicons.dev/icons?i=githubactions" width="36" height="36" alt="GitHub Actions" title="GitHub Actions" /> <img src="https://skillicons.dev/icons?i=nginx" width="36" height="36" alt="Nginx" title="Nginx" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" width="36" height="36" alt="Oracle Cloud" title="Oracle Cloud" /> <img src="https://skillicons.dev/icons?i=cloudflare" width="36" height="36" alt="Cloudflare Tunnel" title="Cloudflare Tunnel" /> |
+| Testing & Security | <img src="https://skillicons.dev/icons?i=jest" width="36" height="36" alt="Jest" title="Jest" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" width="36" height="36" alt="Playwright" title="Playwright" /> <img src="https://skillicons.dev/icons?i=cypress" width="36" height="36" alt="Cypress" title="Cypress" /> <img src="https://skillicons.dev/icons?i=postman" width="36" height="36" alt="Postman" title="Postman" /> <img src="https://cdn.simpleicons.org/jsonwebtokens/FB015B" width="36" height="36" alt="JWT" title="JWT" /> <img src="https://cdn.simpleicons.org/owasp/79C0FF" width="36" height="36" alt="OWASP" title="OWASP" /> |
+| Monitoring & Logging | <img src="https://skillicons.dev/icons?i=sentry" width="36" height="36" alt="Sentry" title="Sentry" /> <img src="https://cdn.simpleicons.org/pino" width="36" height="36" alt="Pino" title="Pino" /> |
+| IoT & Networking | <img src="https://skillicons.dev/icons?i=arduino" width="36" height="36" alt="Arduino" title="Arduino" /> <img src="https://cdn.simpleicons.org/espressif" width="36" height="36" alt="ESP32" title="ESP32" /> <img src="https://cdn.simpleicons.org/cisco" width="36" height="36" alt="Cisco Packet Tracer" title="Cisco Packet Tracer" /> |
+| Tools & Collaboration | <img src="https://skillicons.dev/icons?i=git" width="36" height="36" alt="Git" title="Git" /> <img src="https://skillicons.dev/icons?i=github" width="36" height="36" alt="GitHub" title="GitHub" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" width="36" height="36" alt="Jira" title="Jira" /> <img src="https://skillicons.dev/icons?i=vscode" width="36" height="36" alt="VS Code" title="VS Code" /> <img src="https://skillicons.dev/icons?i=figma" width="36" height="36" alt="Figma" title="Figma" /> <img src="https://cdn.simpleicons.org/diagramsdotnet" width="36" height="36" alt="Draw.io" title="Draw.io" /> <img src="https://skillicons.dev/icons?i=notion" width="36" height="36" alt="Notion" title="Notion" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" width="36" height="36" alt="Canva" title="Canva" /> <img src="https://api.iconify.design/logos/power-bi.svg" width="36" height="36" alt="Power BI" title="Power BI" /> <img src="https://api.iconify.design/vscode-icons/file-type-excel.svg" width="36" height="36" alt="Excel" title="Excel" /> |
 
 ---
 
