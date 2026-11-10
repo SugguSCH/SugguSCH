@@ -20,9 +20,10 @@ for page in range(1, 4):
     with urlopen(request, timeout=30) as response:
         batch = json.load(response)
     events.extend(batch)
-    if len(batch) < 100 or datetime.fromisoformat(batch[-1]['created_at'].replace('Z', '+00:00')) < cutoff:
+    if len(batch) < 100:
         break
 
+events.sort(key=lambda event: event['created_at'], reverse=True)
 pushes = [datetime.fromisoformat(event['created_at'].replace('Z', '+00:00')).astimezone(zone)
           for event in events if event['type'] == 'PushEvent'
           and event['actor']['login'].lower() == 'suggusch'
