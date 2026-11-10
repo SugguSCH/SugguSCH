@@ -69,7 +69,7 @@ jobs:
           filename: metrics/details.svg
           base: ''
           config_timezone: Asia/Bangkok
-          config_order: languages, notable, activity
+          config_order: languages, notable
           plugin_languages: yes
           plugin_languages_indepth: no
           plugin_languages_analysis_timeout: 2
@@ -82,10 +82,6 @@ jobs:
           plugin_notable: yes
           plugin_notable_from: all
           plugin_notable_repositories: yes
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 30
-          plugin_activity_visibility: public
           plugins_errors_fatal: yes
 
       - name: Check out generated images
@@ -121,7 +117,8 @@ jobs:
           <p align="center">
             <img src="metrics/habits.svg" alt="Public push activity by hour and day in Bangkok time" />
             <img src="metrics/recent-languages.svg" alt="Languages inferred from changed files in sampled recent public push heads" />
-            <img src="metrics/details.svg" alt="Activity by day and hour, recent languages, notable contributions and latest activity" />
+            <img src="metrics/details.svg" alt="Repository languages and notable contributions" />
+            <img src="metrics/recent-activity.svg" alt="Five latest public GitHub activities" />
           </p>
 
           Activity patterns reflect public push events, not hours spent coding. Times are shown in Bangkok time.
@@ -134,10 +131,10 @@ jobs:
           assert count == 1, 'Expected one metrics section'
           path.write_text(text, encoding='utf-8')
           PY
-          if [ -n "$(git status --porcelain -- README.md metrics/habits.svg metrics/recent-languages.svg)" ]; then
+          if [ -n "$(git status --porcelain -- README.md metrics/habits.svg metrics/recent-languages.svg metrics/recent-activity.svg)" ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add README.md metrics/habits.svg metrics/recent-languages.svg
+            git add README.md metrics/habits.svg metrics/recent-languages.svg metrics/recent-activity.svg
             git commit -m 'Show generated GitHub metrics'
             git pull --rebase origin main
             git push origin HEAD:main

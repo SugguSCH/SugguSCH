@@ -111,3 +111,23 @@ if not top:
     parts.append('<text x="24" y="92" font-size="12">No supported code changes found in this sample.</text>')
 parts.append(f'<text x="24" y="{height-20}" font-size="10">Inferred from file extensions; sampled activity, not all commits or skill level.</text></g></svg>')
 Path('metrics/recent-languages.svg').write_text(''.join(parts), encoding='utf-8')
+
+recent = [e for e in events if e['actor']['login'].lower() == 'suggusch'][:5]
+height = 80 + max(1, len(recent)) * 56
+parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="700" height="{height}" viewBox="0 0 700 {height}" role="img">',
+    '<title>Latest public GitHub activity</title>',
+    f'<rect width="700" height="{height}" rx="14" fill="#0d1117"/>',
+    '<g font-family="Arial,sans-serif" fill="#c9d1d9">',
+    '<text x="24" y="32" font-size="19" font-weight="bold">Latest public activity</text>']
+for i, event in enumerate(recent):
+    timestamp = datetime.fromisoformat(event['created_at'].replace('Z', '+00:00')).astimezone(zone)
+    label = event['type'].removesuffix('Event')
+    action = event['payload'].get('action', '')
+    repository = event['repo']['name']
+    y = 70 + i * 56
+    parts.append(f'<a href="https://github.com/{escape(repository, quote=True)}"><text x="24" y="{y}" font-size="13" fill="#79c0ff">{escape(label)} {escape(action)} · {escape(repository)}</text></a>')
+    parts.append(f'<text x="24" y="{y+20}" font-size="11">{timestamp:%d %b %Y, %H:%M} Bangkok</text>')
+if not recent:
+    parts.append('<text x="24" y="70" font-size="12">No recent public events available.</text>')
+parts.append('</g></svg>')
+Path('metrics/recent-activity.svg').write_text(''.join(parts), encoding='utf-8')
