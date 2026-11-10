@@ -5,6 +5,7 @@ from html import escape
 import json
 import os
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 zone = timezone(timedelta(hours=7))
@@ -51,3 +52,62 @@ chart(days, ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], 290, 650)
 svg.append('<text x="24" y="330" font-size="10">Based on available public events; push counts are not commit counts or coding hours.</text></g></svg>')
 Path('metrics').mkdir(exist_ok=True)
 Path('metrics/habits.svg').write_text(''.join(svg), encoding='utf-8')
+
+# GitHub now provides before/head SHAs rather than a commit list on PushEvent.
+# Sample distinct public push heads; this measures changed lines, not coding time.
+extensions = {
+    '.ts': 'TypeScript', '.tsx': 'TypeScript', '.js': 'JavaScript', '.jsx': 'JavaScript',
+    '.mjs': 'JavaScript', '.cjs': 'JavaScript', '.py': 'Python', '.java': 'Java',
+    '.dart': 'Dart', '.r': 'R', '.html': 'HTML', '.css': 'CSS', '.scss': 'SCSS',
+    '.sql': 'SQL', '.c': 'C', '.h': 'C', '.cpp': 'C++', '.ino': 'C++',
+    '.sh': 'Shell', '.ps1': 'PowerShell', '.yml': 'YAML', '.yaml': 'YAML',
+}
+languages = Counter()
+seen = set()
+sampled = 0
+for event in events:
+    if event['type'] != 'PushEvent' or event['actor']['login'].lower() != 'suggusch':
+        continue
+    if datetime.fromisoformat(event['created_at'].replace('Z', '+00:00')) < cutoff:
+        continue
+    repository, head = event['repo']['name'], event['payload'].get('head')
+    if not head or (repository, head) in seen:
+        continue
+    seen.add((repository, head))
+    request = Request(f'https://api.github.com/repos/{repository}/commits/{head}',
+        headers={'Accept': 'application/vnd.github+json', 'User-Agent': 'SugguSCH-profile',
+                 'Authorization': f'Bearer {os.environ["GH_TOKEN"]}'})
+    try:
+        with urlopen(request, timeout=30) as response:
+            commit = json.load(response)
+    except HTTPError as error:
+        if error.code in (404, 422):
+            continue
+        raise
+    sampled += 1
+    for file in commit.get('files', []):
+        language = extensions.get(Path(file['filename']).suffix.lower())
+        if language:
+            languages[language] += file.get('changes', 0)
+    if sampled >= 20:
+        break
+
+top = languages.most_common(6)
+total = sum(languages.values())
+height = 125 + max(1, len(top)) * 32
+parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="700" height="{height}" viewBox="0 0 700 {height}" role="img">',
+    '<title>Recent language activity sampled from public push heads</title>',
+    f'<rect width="700" height="{height}" rx="14" fill="#0d1117"/>',
+    '<g font-family="Arial,sans-serif" fill="#c9d1d9">',
+    '<text x="24" y="32" font-size="19" font-weight="bold">Recent language activity</text>',
+    f'<text x="24" y="56" font-size="12">Changed lines in {sampled} sampled public push heads · last 14 days</text>']
+for i, (language, changes) in enumerate(top):
+    y = 88 + 32 * i
+    share = changes / total
+    parts.extend([f'<text x="24" y="{y+4}" font-size="12">{escape(language)}</text>',
+        f'<rect x="150" y="{y-10}" width="{share*450:.1f}" height="16" rx="3" fill="#79c0ff"/>',
+        f'<text x="615" y="{y+4}" font-size="12">{share:.1%}</text>'])
+if not top:
+    parts.append('<text x="24" y="92" font-size="12">No supported code changes found in this sample.</text>')
+parts.append(f'<text x="24" y="{height-20}" font-size="10">Inferred from file extensions; sampled activity, not all commits or skill level.</text></g></svg>')
+Path('metrics/recent-languages.svg').write_text(''.join(parts), encoding='utf-8')
