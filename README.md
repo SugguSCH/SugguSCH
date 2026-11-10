@@ -36,8 +36,7 @@ Technologies and tools I have used through coursework, projects, internships, an
   <img src="metrics/calendar.svg" width="48%" alt="Contribution calendar for the past year" />
 </p>
 
-<details>
-<summary>Activity patterns, recent languages and contributions</summary>
+## Activity patterns, recent languages and contributions
 
 <p align="center">
   <img src="metrics/habits.svg" alt="Public push activity by hour and day in Bangkok time" />
@@ -48,7 +47,6 @@ Technologies and tools I have used through coursework, projects, internships, an
 
 Activity patterns reflect public push events, not hours spent coding. Times are shown in Bangkok time.
 
-</details>
 
 ---
 <!-- github-metrics:end -->
