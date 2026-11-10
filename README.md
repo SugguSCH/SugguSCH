@@ -2,15 +2,18 @@
   <img src="Data is everything..png" width="100%" alt="Data is everything — Suggus profile banner">
 </p>
 
-<h1 align="center">Hi, I'm Suggus</h1>
+<h1 align="center">Hi, I'm Suggus 👋</h1>
 <p align="center">
   Third-year B.Sc. student in Digital Science and Technology<br>
   Mahidol University
 </p>
+<p align="center">Interested in Full-stack Development, QA Testing, and Software Engineering.</p>
 
 ---
 
 ## Tech Stack
+
+Technologies and tools I have used through coursework, projects, internships, and self-directed learning.
 
 | Category | Technologies |
 | :--- | :--- |
@@ -21,9 +24,12 @@
 | Testing & Security | <img src="https://skillicons.dev/icons?i=jest" width="36" height="36" alt="Jest" title="Jest" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" width="36" height="36" alt="Playwright" title="Playwright" /> <img src="https://skillicons.dev/icons?i=cypress" width="36" height="36" alt="Cypress" title="Cypress" /> <img src="https://skillicons.dev/icons?i=postman" width="36" height="36" alt="Postman" title="Postman" /> <img src="https://cdn.simpleicons.org/jsonwebtokens/FB015B" width="36" height="36" alt="JWT" title="JWT" /> <img src="https://cdn.simpleicons.org/owasp/79C0FF" width="36" height="36" alt="OWASP" title="OWASP" /> |
 | Monitoring & Logging | <img src="https://skillicons.dev/icons?i=sentry" width="36" height="36" alt="Sentry" title="Sentry" /> <img src="https://cdn.simpleicons.org/pino" width="36" height="36" alt="Pino" title="Pino" /> |
 | IoT & Networking | <img src="https://skillicons.dev/icons?i=arduino" width="36" height="36" alt="Arduino" title="Arduino" /> <img src="https://cdn.simpleicons.org/espressif" width="36" height="36" alt="ESP32" title="ESP32" /> <img src="https://cdn.simpleicons.org/cisco" width="36" height="36" alt="Cisco Packet Tracer" title="Cisco Packet Tracer" /> |
-| Tools & Collaboration | <img src="https://skillicons.dev/icons?i=git" width="36" height="36" alt="Git" title="Git" /> <img src="https://skillicons.dev/icons?i=github" width="36" height="36" alt="GitHub" title="GitHub" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" width="36" height="36" alt="Jira" title="Jira" /> <img src="https://skillicons.dev/icons?i=vscode" width="36" height="36" alt="VS Code" title="VS Code" /> <img src="https://skillicons.dev/icons?i=figma" width="36" height="36" alt="Figma" title="Figma" /> <img src="https://cdn.simpleicons.org/diagramsdotnet" width="36" height="36" alt="Draw.io" title="Draw.io" /> <img src="https://skillicons.dev/icons?i=notion" width="36" height="36" alt="Notion" title="Notion" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" width="36" height="36" alt="Canva" title="Canva" /> <img src="https://api.iconify.design/logos/power-bi.svg" width="36" height="36" alt="Power BI" title="Power BI" /> <img src="https://api.iconify.design/vscode-icons/file-type-excel.svg" width="36" height="36" alt="Excel" title="Excel" /> |
+| Tools & Collaboration | <img src="https://skillicons.dev/icons?i=git" width="36" height="36" alt="Git" title="Git" /> <img src="https://skillicons.dev/icons?i=github" width="36" height="36" alt="GitHub" title="GitHub" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sourcetree/sourcetree-original.svg" width="36" height="36" alt="Sourcetree" title="Sourcetree" /> <img src="https://git-fork.com/images/logo3.png" width="36" height="36" alt="Fork" title="Fork (Git client)" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" width="36" height="36" alt="Jira" title="Jira" /> <img src="https://skillicons.dev/icons?i=vscode" width="36" height="36" alt="VS Code" title="VS Code" /> <img src="https://skillicons.dev/icons?i=figma" width="36" height="36" alt="Figma" title="Figma" /> <img src="https://cdn.simpleicons.org/diagramsdotnet" width="36" height="36" alt="Draw.io" title="Draw.io" /> <img src="https://skillicons.dev/icons?i=notion" width="36" height="36" alt="Notion" title="Notion" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" width="36" height="36" alt="Canva" title="Canva" /> <img src="https://api.iconify.design/vscode-icons/file-type-excel.svg" width="36" height="36" alt="Excel" title="Excel" /> |
 
 ---
+
+<!-- github-metrics:start -->
+<!-- github-metrics:end -->
 
 ## Currently Learning
 

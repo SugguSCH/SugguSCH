@@ -1,0 +1,143 @@
+name: Profile Metrics
+
+on:
+  schedule:
+    # 07:23 in Bangkok, daily.
+    - cron: '23 0 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/metrics.yml
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check metrics access
+        id: access
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -n "$METRICS_TOKEN" ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Add the METRICS_TOKEN repository secret, then run this workflow again.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Overview and pull requests
+        if: steps.access.outputs.ready == 'true'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: SugguSCH
+          filename: metrics/overview.svg
+          base: header, activity, community
+          config_timezone: Asia/Bangkok
+          plugin_followup: yes
+          plugin_followup_sections: user
+          plugins_errors_fatal: yes
+
+      - name: Contribution calendar
+        if: steps.access.outputs.ready == 'true'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: SugguSCH
+          filename: metrics/calendar.svg
+          base: ''
+          config_timezone: Asia/Bangkok
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugins_errors_fatal: yes
+
+      - name: Habits, languages, contributions and activity
+        if: steps.access.outputs.ready == 'true'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: SugguSCH
+          filename: metrics/details.svg
+          base: ''
+          config_timezone: Asia/Bangkok
+          config_order: habits, languages, notable, activity
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: no
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: graph
+          plugin_habits_languages_limit: 0
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_sections: recently-used
+          plugin_languages_limit: 6
+          plugin_languages_recent_days: 14
+          plugin_languages_details: percentage
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_repositories: yes
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 30
+          plugin_activity_visibility: public
+          plugins_errors_fatal: yes
+
+      - name: Check out generated images
+        if: steps.access.outputs.ready == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Show metrics after the first successful render
+        if: steps.access.outputs.ready == 'true'
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          for image in ('overview', 'calendar', 'details'):
+              assert Path(f'metrics/{image}.svg').is_file(), f'Missing {image} image'
+          path = Path('README.md')
+          text = path.read_text(encoding='utf-8')
+          block = '''<!-- github-metrics:start -->
+          ## GitHub Activity
+
+          <p align="center">
+            <img src="metrics/overview.svg" width="48%" alt="GitHub overview, commits, pull requests and issues" />
+            <img src="metrics/calendar.svg" width="48%" alt="Contribution calendar for the past year" />
+          </p>
+
+          <details>
+          <summary>Activity patterns, recent languages and contributions</summary>
+
+          <p align="center">
+            <img src="metrics/details.svg" alt="Activity by day and hour, recent languages, notable contributions and latest activity" />
+          </p>
+
+          Activity patterns reflect GitHub events, not hours spent coding. Times are shown in Bangkok time.
+
+          </details>
+
+          ---
+          <!-- github-metrics:end -->'''
+          text, count = re.subn(r'<!-- github-metrics:start -->.*?<!-- github-metrics:end -->', lambda _: block, text, flags=re.S)
+          assert count == 1, 'Expected one metrics section'
+          path.write_text(text, encoding='utf-8')
+          PY
+          if ! git diff --quiet -- README.md; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add README.md
+            git commit -m 'Show generated GitHub metrics'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
